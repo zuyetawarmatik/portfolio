@@ -1,6 +1,10 @@
 @hello-main-color: #8c3770;
 @hello-dark-color: #7c3163;
 
+@main-color: @hello-main-color;
+@dark-color: @hello-dark-color;
+@shadow-color: fade(darken(@dark-color, 10%), 40%);
+
 @narrow-desktop-screen: ~"only screen and (max-device-width: 1400px)";
 @wide-desktop-screen: ~"only screen and (min-device-width: 1401px)";
 
@@ -29,9 +33,16 @@ body {
 		padding: 1.5rem 0;
 		
 		background: white;
+		box-shadow: 0 1rem @shadow-color;
 		
 		&>li {
 			display: inline-block;
+			padding: 1rem 2rem;
+			text-transform: uppercase;
+			
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }

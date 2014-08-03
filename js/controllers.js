@@ -25,6 +25,12 @@
 			 		caption: "Contacts"
 			 	}
 		    ];
+		
+		$scope.selectedItem = "hello";
+		
+		$scope.setSelectedItem = function(id) {
+			$scope.selectedItem = id;
+		}
 	}]);
 	
 })();

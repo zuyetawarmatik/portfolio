@@ -21,18 +21,21 @@
 		<link rel='stylesheet' href='/fonts/Source_Sans_Pro/Source_Sans_Pro.css'>
 		
 		<!-- Main CSS -->
-		<link rel="stylesheet/less" type="text/css" href="/css/app.less.css"/>
+		<link rel="stylesheet/less" type="text/css" href="/css/app.less.css">
 	</head>
 	<body>
 		<div id="wrapper">
 			<nav ng-controller="MenuController" id="menu">
-				<ul>
-					<li ng-repeat="menuItem in menuItems" id="{{menuItem.id}}">
-						{{menuItem.caption}}
+				<ul horizontal layout around-justified>
+					<li ng-repeat="menuItem in menuItems" id="{{menuItem.id}}" ng-class="{selected: selectedItem==menuItem.id}">
+						<a href="#" ng-click="setSelectedItem(menuItem.id)">{{menuItem.caption}}</a>
 					</li>
 				</ul>
 			</nav>
 		</div> 
+		
+		<script src="/bower_components/platform/platform.js"></script>
+		<link rel="import" href="/bower_components/polymer/polymer.html">
 		
 		<script src="/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 		<script src="/bower_components/less/dist/less-1.7.4.min.js" type="text/javascript"></script>
