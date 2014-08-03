@@ -1,0 +1,37 @@
+@hello-main-color: #8c3770;
+@hello-dark-color: #7c3163;
+
+@narrow-desktop-screen: ~"only screen and (max-device-width: 1400px)";
+@wide-desktop-screen: ~"only screen and (min-device-width: 1401px)";
+
+html {
+	@media @narrow-desktop-screen {font-size: 50%;}
+	@media @wide-desktop-screen {font-size: 62.5%; /* 10 px */}
+}
+
+body {
+	font-family: "Source Sans Pro";
+	font-size: 2em;
+	
+	background: @hello-main-color;
+}
+
+#wrapper {
+	width: 120rem;
+	margin: auto;
+}
+
+#menu {
+	font-family: "Paytone One";
+	
+	&>ul {
+		margin: 0;
+		padding: 1.5rem 0;
+		
+		background: white;
+		
+		&>li {
+			display: inline-block;
+		}
+	}
+}
