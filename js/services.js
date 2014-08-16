@@ -16,19 +16,19 @@
 				};
 			case 'portfolio':
 				return {
+					mainColor: '#73bfe5',
+					darkColor: '#66aacc'
+				};	
+			case 'contemplating':
+				return {
 					mainColor: '#4fac9b',
 					darkColor: '#4ba494'
 				};
-			case 'contemplating':
+			case 'contacts':
 				return {
 					mainColor: '#cca395',
 					darkColor: '#b59184'
 				};
-			case 'contacts':
-				return {
-					mainColor: '#73bfe5',
-					darkColor: '#66aacc'
-				};	
 			}
 		}
 	}
