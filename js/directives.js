@@ -127,6 +127,7 @@
 		    		
 	    			$scope.selected = ($scope.$parent.selectedColor == $scope.color); 
 	    			$element.css({'box-shadow': ('0.5rem 0.5rem 0 0 ' + colors.shadowColor)});
+	    			$element.css({'text-shadow': ('0.5rem 0.5rem 0 ' + colors.shadowColor)});
 	    		};
 	    		
 	    		$scope.drawBackground = function() {
