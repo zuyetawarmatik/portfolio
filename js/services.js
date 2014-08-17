@@ -4,30 +4,35 @@
 	function ColorService() {
 		this.getColors = function(id) {
 			switch (id) {
-			case 'hello': case 'plum':
+			case 'hello': case 'pl':
 				return {
-					mainColor: '#8c3770',
-					darkColor: '#7c3163'
+					mainColor: '#8E4585',
+					darkColor: '#82407a',
+					shadowColor: '#75396e'
 				};
-			case 'the-3-colors': case 'jaffa':
+			case 'the-3-colors': case 'bo':
 				return {
-					mainColor: '#f07241',
-					darkColor: '#e46c3e'
+					mainColor: '#fe733d',
+					darkColor: '#f06d3a',
+					shadowColor: '#e36736'
 				};
-			case 'portfolio': case 'danube':
+			case 'portfolio': case 'sg':
 				return {
-					mainColor: '#73bfe5',
-					darkColor: '#66aacc'
+					mainColor: '#80CCEA',
+					darkColor: '#7ac2de',
+					shadowColor: '#73b6d1'
 				};	
 			case 'contemplating':
 				return {
 					mainColor: '#4fac9b',
-					darkColor: '#4ba494'
+					darkColor: '#499e8e',
+					shadowColor: '#439183'
 				};
 			case 'contacts':
 				return {
 					mainColor: '#cca395',
-					darkColor: '#b59184'
+					darkColor: '#bf998c',
+					shadowColor: '#b28e82'
 				};
 			}
 		}

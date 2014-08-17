@@ -112,18 +112,21 @@
 	    	restrict: 'A',
 	    	link: function($scope, $element, $attrs) {
 	    		/* Init */
-	    		var colorId = $scope.color.name.toLowerCase();
+	    		var colorId = $scope.color.abbr.toLowerCase();
 	    		
 	    		$scope.getColors = function() {
 	    			return ColorService.getColors(colorId);
 	    		};
 	    		
 	    		$scope.init = function() {
+	    			var colors = $scope.getColors();	    			
+	    			
 	    			$element.prepend('<figure class="block-background" id="' + colorId + '"></figure>');
-	    			$('#' + colorId).css({'background': $scope.getColors().darkColor});
+	    			$('#' + colorId).css({'background': colors.darkColor});
 	    			$scope.canvas = SVG(colorId);
 		    		
 	    			$scope.selected = ($scope.$parent.selectedColor == $scope.color); 
+	    			$element.css({'box-shadow': ('0.5rem 0.5rem 0 0 ' + colors.shadowColor)});
 	    		};
 	    		
 	    		$scope.drawBackground = function() {
