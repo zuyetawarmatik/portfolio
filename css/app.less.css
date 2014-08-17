@@ -9,6 +9,7 @@ html {
 	@media @narrow-desktop-screen {font-size: 50%;}
 	@media @wide-desktop-screen {font-size: 62.5%; /* 10 px */}
 	height: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {

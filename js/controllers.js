@@ -1,8 +1,10 @@
 (function() {
-	var appControllers = angular.module('portfolio.controllers', []);
+	var appControllers = angular.module('portfolio.controllers', ['ngRoute']);
 	
-	appControllers.controller('MainController', ['$scope', function($scope) {
-		$scope.pageId = 'hello';
+	appControllers.controller('MainController', ['$scope', '$route', function($scope, $route) {
+		$scope.$on('$routeChangeSuccess', function(ev, current, prev) {
+			$scope.pageId = current.pageId;
+		});
 	}]);
 	
 	appControllers.controller('MenuController', ['$scope', function($scope) {

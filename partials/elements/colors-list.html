@@ -1,0 +1,14 @@
+<div class="colors-list">
+	<div ng-transclude></div>
+	<ul class="color-blocks">
+		<li ng-repeat="color in colors" ng-class="{selected: color == selectedColor}" ng-click="select(color)" port-block-background>
+			<h1>{{color.abbr}}</h1>
+			<p>{{color.name}}</p>
+		</li>
+	</ul>
+	<div class="color-content">
+		<small>{{selectedColor.abbr}}</small>
+		<h1>{{selectedColor.caption}}</h1>
+		<p>{{selectedColor.subcaption}}</p>
+	</div>
+</div>

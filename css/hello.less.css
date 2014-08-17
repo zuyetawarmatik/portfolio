@@ -1,5 +1,7 @@
-#headline {
-	text-transform: uppercase;
-	padding-top: 8rem;
-	margin: 0;
+.hello {
+	h1 {
+		text-transform: uppercase;
+		padding-top: 8rem;
+		margin: 0;
+	}	
 }
