@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "description": "Portfolio",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "less": "~1.7.4",
+    "polymer": "Polymer/polymer#~0.3.4",
+    "svg.js": "~1.0.0-rc.9",
+    "jquery": "~2.1.1"
+  }
+}
