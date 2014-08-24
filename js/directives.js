@@ -125,7 +125,7 @@
 	    			$('#' + colorId).css({'background': colors.darkColor});
 	    			$scope.canvas = SVG(colorId);
 		    		
-	    			$scope.selected = ($scope.$parent.selectedColor == $scope.color); 
+	    			$scope.selected = ($scope.$parent.selectedColor == $scope.color);
 	    			$element.css({'box-shadow': ('0.5rem 0.5rem 0 0 ' + colors.shadowColor)});
 	    			$element.css({'text-shadow': ('0.5rem 0.5rem 0 ' + colors.shadowColor)});
 	    		};
@@ -145,7 +145,7 @@
 		    				$scope.overlayPoly.x(-width * 2.25);
 		    			}
 	    			} else {
-	    				if ($element.hasClass('selected')) {
+	    				if ($element.hasClass('selected') || $element.hasClass('hovered')) {
 		    				$scope.overlayPoly.animate(250, '>').move(-width, 0);
 		    			} else {
 		    				$scope.overlayPoly.animate(250, '>').move(-width * 2.25, 0);
@@ -158,6 +158,15 @@
 	    		$scope.$watch(function(){return $element.attr('class')}, function(val){
 	    			$scope.drawBackground();
 	    		});
+	    		
+	    		$element.bind('mouseenter', function() {
+	    			$element.addClass('hovered');
+	    			$scope.drawBackground();
+	            });
+	    		$element.bind('mouseleave', function() {
+	    			$element.removeClass('hovered');
+	    			$scope.drawBackground();
+	            });
 	    	},
 	    };
 	}]);

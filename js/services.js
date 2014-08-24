@@ -16,17 +16,17 @@
 					darkColor: '#f06d3a',
 					shadowColor: '#e36736'
 				};
-			case 'portfolio': case 'sg':
-				return {
-					mainColor: '#80CCEA',
-					darkColor: '#7ac2de',
-					shadowColor: '#73b6d1'
-				};	
-			case 'contemplating':
+			case 'portfolio': case 'tw':
 				return {
 					mainColor: '#4fac9b',
 					darkColor: '#499e8e',
 					shadowColor: '#439183'
+				};
+			case 'contemplating':
+				return {
+					mainColor: '#80CCEA',
+					darkColor: '#7ac2de',
+					shadowColor: '#73b6d1'
 				};
 			case 'contacts':
 				return {

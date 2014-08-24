@@ -2,8 +2,8 @@
 @dark-color: #7c3163;
 @shadow-color: fade(darken(@dark-color, 7.5%), 40%);
 
-@narrow-desktop-screen: ~"only screen and (max-device-width: 1400px)";
-@wide-desktop-screen: ~"only screen and (min-device-width: 1401px)";
+@narrow-desktop-screen: ~"only screen and (max-device-width: 1599px)";
+@wide-desktop-screen: ~"only screen and (min-device-width: 1600px)";
 
 html {
 	@media @narrow-desktop-screen {font-size: 50%;}
