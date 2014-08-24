@@ -6,8 +6,8 @@
 @wide-desktop-screen: ~"only screen and (min-device-width: 1600px)";
 
 html {
-	@media @narrow-desktop-screen {font-size: 50%;}
-	@media @wide-desktop-screen {font-size: 62.5%; /* 10 px */}
+	@media @narrow-desktop-screen {font-size: 45%;}
+	@media @wide-desktop-screen {font-size: 57.5%;}
 	height: 100%;
 	-webkit-font-smoothing: antialiased;
 }
@@ -16,7 +16,7 @@ body {
 	font-family: "Paytone One";
 	font-size: 2em;
 	color: #444;
-	background: #ddd;
+	background: @dark-color;
 	
 	position: relative;
 	height: 100%;

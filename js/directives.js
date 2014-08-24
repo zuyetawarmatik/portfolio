@@ -27,8 +27,8 @@
     				var edgea1 = bodyWidth/2 + delta * 0.5;
     				var edgea2 = bodyWidth/2 - delta * 0.5;
     				
-    				var edgea1f = edgea1 - 10;
-    				var edgea2f = edgea2 - 10; var ledgea2f = bodyWidth - edgea2f;
+    				var edgea1f = edgea1;
+    				var edgea2f = edgea2; var ledgea2f = bodyWidth - edgea2f;
     				
 	    			if ($scope.overlayPoly === undefined || isResize === true) {
 	    				$scope.canvas.clear();
@@ -145,8 +145,10 @@
 		    				$scope.overlayPoly.x(-width * 2.25);
 		    			}
 	    			} else {
-	    				if ($element.hasClass('selected') || $element.hasClass('hovered')) {
+	    				if ($element.hasClass('selected')) {
 		    				$scope.overlayPoly.animate(250, '>').move(-width, 0);
+		    			} else if ($element.hasClass('hovered')) {
+		    				$scope.overlayPoly.animate(250, '>').move(-width * 2, 0);
 		    			} else {
 		    				$scope.overlayPoly.animate(250, '>').move(-width * 2.25, 0);
 		    			}
@@ -171,4 +173,71 @@
 	    };
 	}]);
 	
+	appDirectives.directive('portBadgeBackground', ['ColorService', function(ColorService) {
+	    return {
+	    	restrict: 'A',
+	    	link: function($scope, $element, $attrs) {
+	    		/* Init */
+	    		var colorId;
+	    		
+	    		$scope.getColors = function() {
+	    			return ColorService.getColors(colorId);
+	    		};
+	    		
+	    		$scope.init = function() {
+	    			$element.prepend('<figure id="badge-background"></figure>');
+	    			$scope.badgeCanvas = SVG("badge-background");
+	    		};
+	    		
+	    		$scope.init();
+	    		
+	    		$scope.drawBackground = function() {
+	    			var colors = $scope.getColors();
+	    			var mainColor = colors.mainColor;
+	    			var darkColor = colors.darkColor;
+	    			
+	    			$jqElement = $($element[0]);
+	    			
+	    			var width = $jqElement.width();
+	    			var height = $jqElement.height();
+	    			
+	    			if ($scope.badgeBackPoly === undefined) {
+	    				var badgeBackPolyStr = '0,0 0,{3} {1},{2} {0},{3} {0},0 '.format(width, width * 0.5, height, height * 0.75);
+	    				$scope.badgeBackPoly = $scope.badgeCanvas.polygon(badgeBackPolyStr).fill(darkColor);
+	    				var badgeOverlayPolyStr = '0,0 0,{2} {0},{1} {0},0'.format(width * 0.5, height, height * 0.75);
+	    				$scope.badgeOverlayPoly = $scope.badgeCanvas.polygon(badgeOverlayPolyStr).fill(mainColor);
+	    			} else {
+	    				$scope.badgeBackPoly.animate(250, '>').attr({ fill: darkColor });
+	    				$scope.badgeOverlayPoly.animate(250, '>').attr({ fill: mainColor });
+	    			}
+	    		};
+	    		
+	    		$scope.$watch(function(){return $scope.selectedColor.abbr.toLowerCase();}, function(val){
+	    			colorId = val;
+	    			$scope.drawBackground();
+	    		});
+	    	}
+	    };
+	}]);
+	
+	appDirectives.directive('portBubbleBackground', function() {
+	    return {
+	    	restrict: 'A',
+	    	link: function($scope, $element, $attrs) {
+	    		$scope.init = function() {
+	    			$element.prepend('<figure id="bubble-background"></figure>');
+	    			$scope.bubbleCanvas = SVG("bubble-background");
+	    			
+	    			var width = $('.color-content').outerWidth();
+	    			var height = $('.color-content').outerHeight();
+	    			
+    				var bubbleBackPolyStr = '0,0 {0},0 {0},{3} {1},{2} 0,{2}'.format(width, width * 1.05, height, height - width * 0.05);
+    				$scope.bubbleBackPoly = $scope.bubbleCanvas.polygon(bubbleBackPolyStr).fill('#f9f9f9');
+    				$scope.bubbleBackPoly.stroke('#e5e5e5');
+	    		};
+	    		
+	    		$scope.init();
+	    	}
+	    };
+	});
 })();

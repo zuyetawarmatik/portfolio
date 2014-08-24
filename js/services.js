@@ -24,7 +24,7 @@
 				};
 			case 'contemplating':
 				return {
-					mainColor: '#80CCEA',
+					mainColor: '#80ccea',
 					darkColor: '#7ac2de',
 					shadowColor: '#73b6d1'
 				};
