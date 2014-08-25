@@ -22,12 +22,30 @@ body {
 	height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	font-weight: normal;
 }
 
 p {
 	font-family: "Source Sans Pro";
+}
+
+button, .btn {
+	display: inline-block;
+	padding: 2rem 3rem;
+	font-family: "Source Sans Pro";
+	font-size: 3rem;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	background: #f25b5b;
+	border-bottom: 0.5rem solid #d45050;
+	transition: background 0.25s ease;
+		
+	&:hover {
+		background: #d45050;
+	}
 }
 
 #wrapper {
@@ -51,33 +69,29 @@ p {
 		
 		&>li {
 			display: inline-block;
+			transition: background 0.25s ease;
 			
 			&.selected, &:hover, &:not(.selected):hover {
 				background: @main-color;
-				transition: background 0.25s ease;
 				
 				a {
-					transition: color 0.25s ease;
 					color: white;
 				}
 			}
 		
 			&:not(.selected) {
-				transition: background 0.25s ease;
-	
 				a {
-					transition: color 0.25s ease;
 					color: @main-color;
 				}
 			}
 
 			a {
+				transition: color 0.25s ease;
 				text-decoration: none;
 				text-transform: uppercase;
 				display: inline-block;
 				padding: 1rem 2rem;
 			}
-
 		}
 	}
 }
@@ -92,4 +106,9 @@ p {
 	background: white;
 	box-shadow: 0 1rem @shadow-color;
 	text-align: center;
+}
+
+#acknowledge {
+	color: #fff;
+	height: 10rem;
 }

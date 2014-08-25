@@ -148,7 +148,7 @@
 	    				if ($element.hasClass('selected')) {
 		    				$scope.overlayPoly.animate(250, '>').move(-width, 0);
 		    			} else if ($element.hasClass('hovered')) {
-		    				$scope.overlayPoly.animate(250, '>').move(-width * 2, 0);
+		    				$scope.overlayPoly.animate(200, '>').move(-width * 2, 0);
 		    			} else {
 		    				$scope.overlayPoly.animate(250, '>').move(-width * 2.25, 0);
 		    			}

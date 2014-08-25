@@ -3,5 +3,12 @@
 		text-transform: uppercase;
 		padding-top: 8rem;
 		margin: 0;
-	}	
+	}
+
+	h2 {
+		margin-top: 10rem;
+		font-family: "Source Sans Pro";
+		font-style: italic;
+		font-weight: 300;
+	}
 }
