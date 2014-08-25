@@ -6,7 +6,7 @@
 @wide-desktop-screen: ~"only screen and (min-device-width: 1600px)";
 
 html {
-	@media @narrow-desktop-screen {font-size: 45%;}
+	font-size: 45%;
 	@media @wide-desktop-screen {font-size: 57.5%;}
 	height: 100%;
 	-webkit-font-smoothing: antialiased;
@@ -14,7 +14,7 @@ html {
 
 body {
 	font-family: "Paytone One";
-	font-size: 2em;
+	font-size: 2rem;
 	color: #444;
 	background: @dark-color;
 	
@@ -52,20 +52,25 @@ p {
 		&>li {
 			display: inline-block;
 			
-			&.selected {	
+			&.selected, &:hover, &:not(.selected):hover {
 				background: @main-color;
+				transition: background 0.25s ease;
 				
 				a {
+					transition: color 0.25s ease;
 					color: white;
 				}
 			}
 		
 			&:not(.selected) {
+				transition: background 0.25s ease;
+	
 				a {
+					transition: color 0.25s ease;
 					color: @main-color;
 				}
 			}
-				
+
 			a {
 				text-decoration: none;
 				text-transform: uppercase;
