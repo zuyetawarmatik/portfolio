@@ -6,21 +6,21 @@
 			switch (id) {
 			case 'hello': case 'pl':
 				return {
-					mainColor: '#8E4585',
-					darkColor: '#82407a',
-					shadowColor: '#75396e'
+					mainColor: '#8c3770',
+					darkColor: '#7c3163',
+					shadowColor: '#702d5a'
 				};
-			case 'the-3-colors': case 'bo':
+			case 'the-3-colors': case 'jf':
 				return {
-					mainColor: '#fe733d',
-					darkColor: '#f06d3a',
-					shadowColor: '#e36736'
+					mainColor: '#f07241',
+					darkColor: '#e46c3e',
+					shadowColor: '#d6663a'
 				};
 			case 'portfolio': case 'tw':
 				return {
 					mainColor: '#4fac9b',
-					darkColor: '#499e8e',
-					shadowColor: '#439183'
+					darkColor: '#4ba494',
+					shadowColor: '#459688'
 				};
 			case 'contemplating':
 				return {
@@ -32,7 +32,7 @@
 				return {
 					mainColor: '#cca395',
 					darkColor: '#bf998c',
-					shadowColor: '#b28e82'
+					shadowColor: '#b38e82'
 				};
 			}
 		}
