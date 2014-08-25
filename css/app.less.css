@@ -32,7 +32,7 @@ p {
 
 button, .btn {
 	display: inline-block;
-	padding: 2rem 3rem;
+	padding: 2rem 4rem;
 	font-family: "Source Sans Pro";
 	font-size: 3rem;
 	font-weight: 700;
@@ -90,7 +90,7 @@ button, .btn {
 				text-decoration: none;
 				text-transform: uppercase;
 				display: inline-block;
-				padding: 1rem 2rem;
+				padding: 1rem 3rem;
 			}
 		}
 	}

@@ -85,7 +85,7 @@
 	    		};
 	    		$scope.select = function(color) {
 	    			$scope.selectedColor = color;
-				};
+					};
 	    	},
 	    	templateUrl: 'partials/elements/colors-list.html'
 	    }
@@ -239,5 +239,41 @@
 	    		$scope.init();
 	    	}
 	    };
+	});
+	
+	appDirectives.directive('artworksList', function() {
+	    return {
+	    	restrict: 'E',
+	    	transclude: true,
+	    	scope: {},
+	    	controller: function($scope) {
+	    		var artworks = $scope.artworks = [];
+	    		this.add = function(artwork) {
+	    			if (artworks.length === 0)
+	    				$scope.focus(artwork);
+	    			artworks.push(artwork);
+	    		};
+	    		$scope.focus = function(artwork) {
+	    			$scope.focusedArtwork = artwork;
+					};
+	    	},
+	    	templateUrl: 'partials/elements/artworks-list.html'
+	    }
+	});
+	
+	appDirectives.directive('artwork', function() {
+	    return {
+	    	require: '^artworksList',
+	    	restrict: 'E',
+	    	scope: {
+	    		name: '@',
+	    		time: '@',
+	    		caption: '@',
+	    		img: '@',
+	    	},
+	    	link: function($scope, $element, $attrs, $ctrl) {
+	    		$ctrl.add($scope);
+	    	}
+	    }
 	});
 })();

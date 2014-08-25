@@ -1,0 +1,11 @@
+<div class="artworks-list">
+	<div ng-transclude></div>
+	<div class="artwork-content">
+		<h1>{{focusedArtwork.name}}.<span> Made in {{focusedArtwork.time}}.</span></small>
+		<h2>"{{focusedArtwork.caption}}"</h2>
+		<div class="artwork-thumbnail"></div>
+	</div>
+	<ul class="artwork-dots">
+		<li ng-repeat="artwork in artworks" ng-class="{focused: artwork == focusedArtwork}" ng-click="focus(artwork)"></li>
+	</ul>
+</div>
