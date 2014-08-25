@@ -6,8 +6,8 @@
 @wide-desktop-screen: ~"only screen and (min-device-width: 1600px)";
 
 html {
-	font-size: 45%;
-	@media @wide-desktop-screen {font-size: 57.5%;}
+	font-size: 7.2px;
+	@media @wide-desktop-screen {font-size: 9.2px;}
 	height: 100%;
 	-webkit-font-smoothing: antialiased;
 }
