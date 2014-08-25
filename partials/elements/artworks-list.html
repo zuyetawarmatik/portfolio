@@ -6,6 +6,6 @@
 		<div class="artwork-thumbnail"></div>
 	</div>
 	<ul class="artwork-dots">
-		<li ng-repeat="artwork in artworks" ng-class="{focused: artwork == focusedArtwork}" ng-click="focus(artwork)"></li>
+		<li ng-repeat="artwork in artworks" ng-class="{focused: artwork == focusedArtwork}" ng-click="focus(artwork, $index)"></li>
 	</ul>
 </div>

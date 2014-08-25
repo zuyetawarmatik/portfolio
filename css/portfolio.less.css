@@ -16,6 +16,10 @@
 		font-weight: 300;
 	}
 
+	.artwork-thumbnail {
+		height: 30rem;
+	}
+
 	.artwork-dots {
 		padding: 0;
 	

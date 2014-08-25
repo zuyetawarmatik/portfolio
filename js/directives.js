@@ -241,7 +241,7 @@
 	    };
 	});
 	
-	appDirectives.directive('artworksList', function() {
+	appDirectives.directive('artworksList', ['$interval', function($interval) {
 	    return {
 	    	restrict: 'E',
 	    	transclude: true,
@@ -250,16 +250,25 @@
 	    		var artworks = $scope.artworks = [];
 	    		this.add = function(artwork) {
 	    			if (artworks.length === 0)
-	    				$scope.focus(artwork);
+	    				$scope.focus(artwork, 0);
 	    			artworks.push(artwork);
 	    		};
-	    		$scope.focus = function(artwork) {
+	    		$scope.focus = function(artwork, index) {
 	    			$scope.focusedArtwork = artwork;
+						$scope.focusedIndex = index;
 					};
 	    	},
+				link:function($scope, $element, $attrs) {
+					var timerFn = $interval(function() {
+						var artworksCount = artworks.length;
+						var newIndex = (++$scope.focusedIndex)%artworksCount;
+						$scope.focusedArtwork = artworks[newIndex];
+						$scope.focusedIndex = newIndex;
+					}, 5000);
+				}
 	    	templateUrl: 'partials/elements/artworks-list.html'
 	    }
-	});
+	}]);
 	
 	appDirectives.directive('artwork', function() {
 	    return {
