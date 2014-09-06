@@ -264,7 +264,7 @@
 					var newIndex = (++$scope.focusedIndex)%artworksCount;
 					$scope.focusedArtwork = $scope.artworks[newIndex];
 					$scope.focusedIndex = newIndex;
-				}, 5000);
+				}, 10000);
 			},
 	    	templateUrl: 'partials/elements/artworks-list.html'
 	    }
@@ -279,6 +279,7 @@
 	    		time: '@',
 	    		caption: '@',
 	    		img: '@',
+	    		link: '@',
 	    	},
 	    	link: function($scope, $element, $attrs, $ctrl) {
 	    		$ctrl.add($scope);
