@@ -17,7 +17,12 @@
 	}
 
 	.artwork-thumbnail {
-		height: 30rem;
+		margin: 4rem auto;
+		width: 54.6rem;
+		height: 40rem;
+		background: url(../img/iMac.svg);
+		background-repeat: no-repeat;
+  		background-size: 54.6rem 40rem;
 	}
 
 	.artwork-dots {
@@ -30,7 +35,9 @@
 			border: 1px #4fac9b solid;
 			margin-right: 1rem;
 			padding: 0;
-		
+			cursor: pointer;
+			transition: background 0.25s ease;
+			
 			&.focused {
 				background: #4fac9b;
 			}
