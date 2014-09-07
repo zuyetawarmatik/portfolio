@@ -106,6 +106,7 @@ button, .btn {
 	background: white;
 	box-shadow: 0 1rem @shadow-color;
 	text-align: center;
+	overflow: hidden;
 }
 
 #acknowledge {

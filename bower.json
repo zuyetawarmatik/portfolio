@@ -15,5 +15,8 @@
     "polymer": "Polymer/polymer#~0.3.4",
     "svg.js": "~1.0.0-rc.9",
     "jquery": "~2.1.1"
+  },
+  "resolutions": {
+    "polymer": ">=0.4.0 <1.0.0"
   }
 }

@@ -22,10 +22,10 @@
 			 		id: 'portfolio',
 			 		caption: 'Portfolio'
 			 	},
-			 	{
+			 	/*{
 			 		id: 'contemplating',
 			 		caption: 'Contemplating'
-			 	},
+			 	},*/
 			 	{
 			 		id: 'contacts',
 			 		caption: 'Contacts'
