@@ -23,6 +23,7 @@
 		<!-- Webfont -->
 		<link rel='stylesheet' href='/fonts/Paytone_One/Paytone_One.css'>
 		<link rel='stylesheet' href='/fonts/Source_Sans_Pro/Source_Sans_Pro.css'>
+		<link rel='stylesheet' href='/fonts/font-awesome-4.2.0/css/font-awesome.min.css'>
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet/less" type="text/css" href="/css/app.less.css">
@@ -30,7 +31,7 @@
 		<link rel="stylesheet/less" type="text/css" href="/css/the-3-colors.less.css">
 		<link rel="stylesheet/less" type="text/css" href="/css/portfolio.less.css">
 	</head>
-	<body ng-controller="MainController" touch-action="auto" port-background>
+	<body ng-controller="MainController" touch-action="auto" port-background ng-cloak>
 		<div id="wrapper">
 			<nav ng-controller="MenuController" id="menu">
 				<ul horizontal layout around-justified>
@@ -40,7 +41,12 @@
 				</ul>
 			</nav>
 			<div id="copyright" horizontal layout center-justified center>
-				<span>Zuyet Awarmatik 2014.</span>
+				<span>Zuyet Awarmatik 2014.
+					<a href="http://zuyetawarmatik.deviantart.com/" class="fa fa-deviantart" target="_blank"></a>
+					<a href="https://www.behance.net/zuyetawarmatik" class="fa fa-behance" target="_blank"></a>
+					<a href="https://www.facebook.com/zuyetawarmatik" class="fa fa-facebook" target="_blank"></a>
+					<a href="http://sg.linkedin.com/pub/bui-phuc-duyet/34/224/649" class="fa fa-linkedin" target="_blank"></a>
+				</span>
 			</div>
 			<div id="view" ng-view ng-class="pageId"></div>
 			<div id="acknowledge" horizontal layout center-justified center>

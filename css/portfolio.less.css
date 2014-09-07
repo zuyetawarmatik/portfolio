@@ -58,7 +58,7 @@
   				top: 0;
   				width: 100%;
   				height: 100%;
-  				box-shadow: inset 0 14rem 0 0 fade(#fff, 10%);
+  				box-shadow: inset 0 5rem 0 0 fade(#fff, 10%);
   			}
   		}
 	}
@@ -75,6 +75,7 @@
 			padding: 0;
 			cursor: pointer;
 			transition: background 0.25s ease;
+			border-radius: 50%;
 			
 			&.focused {
 				background: #4fac9b;
@@ -82,6 +83,56 @@
 
 			&:last-child {
 				margin-right: 0;
+			}
+		}
+	}
+	
+	#float-btn {
+		position: absolute;
+		width: 4rem;
+		height: 3.5rem;
+		padding-top: 0.5rem;
+		bottom: 4rem;
+		right: 4rem;
+		background: #eee;
+		cursor: pointer;
+		transition: background 0.25s ease, color 0.25s ease;
+		border-radius: 50%;
+		
+		&:hover {
+			background: #4fac9b;
+			color: #fff;
+		}
+	}
+	
+	#public-portfolios {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 100%;
+		background: fade(#4fac9b, 95%);
+		transition: all 0.25s ease;
+		color: #fff;
+				
+		&.expanded {
+			top: 0;
+			bottom: 0;
+		}
+		
+		h1 {
+			font-family: "Source Sans Pro";
+			font-size: 3rem;
+		}
+		
+		a {
+			color: white;
+			text-decoration: none;
+			font-size: 6rem;
+			padding: 5rem;
+			transition: box-shadow 0.25s ease;
+			
+			&:hover {
+				box-shadow: 0 0 0 1rem #459688;
 			}
 		}
 	}

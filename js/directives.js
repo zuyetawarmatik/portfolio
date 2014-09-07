@@ -286,4 +286,15 @@
 	    	}
 	    }
 	});
+	
+	appDirectives.directive('portfolioFloatBtn', function() {
+	    return {
+	    	restrict: 'A',
+	    	link: function($scope, $element, $attrs) {
+	    		$element.bind('click', function() {
+	    			$('#public-portfolios').toggleClass("expanded");
+	            });
+	    	}
+	    };
+	});
 })();

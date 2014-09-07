@@ -30,6 +30,10 @@ p {
 	font-family: "Source Sans Pro";
 }
 
+a:focus {
+	outline: none;
+}
+
 button, .btn {
 	display: inline-block;
 	padding: 2rem 4rem;
@@ -69,11 +73,10 @@ button, .btn {
 		
 		&>li {
 			display: inline-block;
-			transition: background 0.25s ease;
+			transition: box-shadow 0.25s ease;
 			
-			&.selected, &:hover, &:not(.selected):hover {
+			&.selected {
 				background: @main-color;
-				
 				a {
 					color: white;
 				}
@@ -84,9 +87,12 @@ button, .btn {
 					color: @main-color;
 				}
 			}
+			
+			&:not(.selected):hover {
+				box-shadow: 0 0 0 0.4rem @main-color; 
+			}
 
 			a {
-				transition: color 0.25s ease;
 				text-decoration: none;
 				text-transform: uppercase;
 				display: inline-block;
@@ -99,9 +105,25 @@ button, .btn {
 #copyright {
 	height: 10rem;
 	color: white;
+	
+	a {
+		color: white;
+		text-decoration: none;
+		margin-left: 2rem;
+		width: 4rem;
+		height: 3rem;
+		padding-top: 1rem;
+		text-align: center;
+		transition: box-shadow 0.25s ease;
+		
+		&:hover {
+			box-shadow: 0 0 0 0.8rem @shadow-color;
+		}
+	}
 }
 
 #view {
+	position: relative;
 	height: 74rem;
 	background: white;
 	box-shadow: 0 1rem @shadow-color;
