@@ -26,13 +26,20 @@ module.exports = function (grunt) {
 				dest: 'dist/css/app.less.css'
 			},
 			img: {
-				src: 'img/*.*',
+				src: 'img/*',
 				dest: 'dist/'
+			},
+			fonts: {
+				expand: true,
+				flatten: true,
+				cwd: 'fonts/',
+				src: ['**/*.eot', '**/*.ttf', '**/*.otf', '**/*.woff', '**/*.svg'],
+				dest: 'dist/fonts/'
 			}
 		},
 		
 		concat: {
-			portfolio: {
+			js: {
 				src: [
 					'js/app.js',
 					'js/common.js',
@@ -42,11 +49,19 @@ module.exports = function (grunt) {
 					'js/services.js'
 				],
 				dest: 'dist/js/app.js'
+			},
+			fonts: {
+				src: [
+					'fonts/Paytone_One/Paytone_One.css',
+					'fonts/Source_Sans_Pro/Source_Sans_Pro.css',
+					'fonts/font-awesome-4.2.0/font-awesome.min.css'
+				],
+				dest: 'dist/fonts/fonts.css'
 			}
 		},
 
 		uglify: {
-			portfolio: {
+			js: {
 				src: '<%= concat.portfolio.dest %>',
 				dest: 'dist/js/app.js'
 			},
@@ -58,7 +73,7 @@ module.exports = function (grunt) {
 					strictMath: true,
 				},
 				files: {
-					'dist/css/pages.css': 'css/pages.less.css',
+					'dist/css/pages.css': 'css/pages.less.css'
 				}
 			},
 		},
@@ -96,12 +111,17 @@ module.exports = function (grunt) {
 				keepSpecialComments: '*',
 				noAdvanced: true
 			},
-			portfolio: {
+			css: {
 				files: {
 					'dist/css/pages.css': 'dist/css/pages.css',
 					'dist/css/app.less.css': 'dist/css/app.less.css',
 				}
 			},
+			fonts: {
+				files: {
+					'dist/fonts/fonts.css': 'dist/fonts/fonts.css',
+				}
+			}
 		},
 
 		exec: {
