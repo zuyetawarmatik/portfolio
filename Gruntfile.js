@@ -25,6 +25,10 @@ module.exports = function (grunt) {
 				src: 'css/app.less.css',
 				dest: 'dist/css/app.less.css'
 			},
+			img: {
+				src: 'img/*.*',
+				dest: 'dist/'
+			}
 		},
 		
 		concat: {
@@ -117,7 +121,7 @@ module.exports = function (grunt) {
 	};
 	
 	// Full distribution task.
-	grunt.registerTask('dist', ['clean', 'concat', 'uglify', 'copy:less', 'less:compilePages', 'autoprefixer', 'csscomb', 'cssmin']);
+	grunt.registerTask('dist', ['clean', 'concat', 'copy', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
 
 	// Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
 	// This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
