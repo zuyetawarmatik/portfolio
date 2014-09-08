@@ -102,6 +102,15 @@ button, .btn {
 	}
 }
 
+#view.ng-enter {
+	transition: 0.5s ease all;
+	opacity: 0;
+}
+ 
+#view.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
 #copyright {
 	height: 10rem;
 	color: white;
