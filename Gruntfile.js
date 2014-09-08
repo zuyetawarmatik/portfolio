@@ -38,6 +38,17 @@ module.exports = function (grunt) {
 			}
 		},
 		
+		imagemin: {
+			portfolio: {
+				files: [{
+					expand: true,
+					cwd: 'dist/img/',
+					src: ['*.png'],
+					dest: 'dist/img/'
+				}]
+			}
+		},
+		
 		concat: {
 			js: {
 				src: [
@@ -144,7 +155,7 @@ module.exports = function (grunt) {
 	};
 	
 	// Full distribution task.
-	grunt.registerTask('dist', ['clean', 'concat', 'copy', 'uglify', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
+	grunt.registerTask('dist', ['clean', 'copy', 'imagemin', 'concat', 'uglify', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
 
 	// Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
 	// This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
