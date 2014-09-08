@@ -16,7 +16,8 @@
 		"grunt-csscomb": "~2.0.1",
 		"grunt-exec": "~0.4.5",
 		"npm-shrinkwrap": "~3.1.6",
-		"load-grunt-tasks": "~0.6.0"
+		"load-grunt-tasks": "~0.6.0",
+		"image-min": "~0.3.2"
 	},
 	"engines": {
 		"node": "~0.10.1"
