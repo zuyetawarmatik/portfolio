@@ -1,108 +1,137 @@
 module.exports = function (grunt) {
-  'use strict';
+	'use strict';
 
-  // Force use of Unix newlines
-  grunt.util.linefeed = '\n';
+	// Force use of Unix newlines
+	grunt.util.linefeed = '\n';
 
-  RegExp.quote = function (string) {
-    return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-  };
+	RegExp.quote = function (string) {
+		return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+	};
 
-  var fs = require('fs');
-  var path = require('path');
-  var npmShrinkwrap = require('npm-shrinkwrap');
+	var fs = require('fs');
+	var path = require('path');
+	var npmShrinkwrap = require('npm-shrinkwrap');
 
-  // Project configuration.
-  grunt.initConfig({
+	// Project configuration.
+	grunt.initConfig({
 
-    // Task configuration.
-    clean: {
-      dist: ['dist']
-    },
+		// Task configuration.
+		clean: {
+			dist: ['dist']
+		},
 
-    less: {
-      compilePages: {
-        options: {
-          strictMath: true,
-        },
-        files: {
-          'dist/css/pages.css': 'css/pages.less.css',
-        }
-      },
-    },
+		copy: {
+			less: {
+				src: 'css/app.less.css',
+				dest: 'dist/css/app.less.css'
+			},
+		},
+		
+		concat: {
+			portfolio: {
+				src: [
+					'js/app.js',
+					'js/common.js',
+					'js/controllers.js',
+					'js/directives.js',
+					'js/filters.js',
+					'js/services.js'
+				],
+				dest: 'dist/js/app.js'
+			}
+		},
 
-    autoprefixer: {
-      options: {
-        browsers: [
-          'Android 2.3',
-          'Android >= 4',
-          'Chrome >= 20',
-          'Firefox >= 24', // Firefox 24 is the latest ESR
-          'Explorer >= 8',
-          'iOS >= 6',
-          'Opera >= 12',
-          'Safari >= 6'
-        ]
-      },
-      pages: {
-        src: 'dist/css/pages.css'
-      },
-    },
+		uglify: {
+			portfolio: {
+				src: '<%= concat.portfolio.dest %>',
+				dest: 'dist/js/app.js'
+			},
+		},
+		
+		less: {
+			compilePages: {
+				options: {
+					strictMath: true,
+				},
+				files: {
+					'dist/css/pages.css': 'css/pages.less.css',
+				}
+			},
+		},
 
-    csscomb: {
-      pages: {
-        expand: true,
-        cwd: 'dist/css/',
-        src: ['*.css', '!*.min.css'],
-        dest: 'dist/css/'
-      },
-    },
+		autoprefixer: {
+			options: {
+				browsers: [
+					'Android 2.3',
+					'Android >= 4',
+					'Chrome >= 20',
+					'Firefox >= 24', // Firefox 24 is the latest ESR
+					'Explorer >= 8',
+					'iOS >= 6',
+					'Opera >= 12',
+					'Safari >= 6'
+				]
+			},
+			portfolio: {
+				src: ['dist/css/pages.css']
+			},
+		},
 
-    cssmin: {
-      options: {
-        compatibility: 'ie8',
-        keepSpecialComments: '*',
-        noAdvanced: true
-      },
-      pages: {
-        files: {
-          'dist/css/pages.css': 'dist/css/pages.css',
-        }
-      },
-    },
+		csscomb: {
+			portfolio: {
+				expand: true,
+				cwd: 'dist/css/',
+				src: ['*.css', '!*.less.css'],
+				dest: 'dist/css/'
+			},
+		},
+
+		cssmin: {
+			options: {
+				compatibility: 'ie8',
+				keepSpecialComments: '*',
+				noAdvanced: true
+			},
+			portfolio: {
+				files: {
+					'dist/css/pages.css': 'dist/css/pages.css',
+					'dist/css/app.less.css': 'dist/css/app.less.css',
+				}
+			},
+		},
 
 		exec: {
-      npmUpdate: {
-        command: 'npm update'
-      }
-    }
-  });
+			npmUpdate: {
+				command: 'npm update'
+			}
+		}
+	});
 
-  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
+	require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
-  var runSubset = function (subset) {
-    return !process.env.TWBS_TEST || process.env.TWBS_TEST === subset;
-  };
-  var isUndefOrNonZero = function (val) {
-    return val === undefined || val !== '0';
-  };
+	var runSubset = function (subset) {
+		return !process.env.TWBS_TEST || process.env.TWBS_TEST === subset;
+	};
+	var isUndefOrNonZero = function (val) {
+		return val === undefined || val !== '0';
+	};
 	
-  // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'less:compilePages', 'autoprefixer', 'csscomb', 'cssmin']);
+	// Full distribution task.
+	grunt.registerTask('dist', ['clean', 'concat', 'uglify', 'copy:less', 'less:compilePages', 'autoprefixer', 'csscomb', 'cssmin']);
 
-  // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
-  // This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
-  grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', '_update-shrinkwrap']);
-  grunt.registerTask('_update-shrinkwrap', function () {
-    var done = this.async();
-    npmShrinkwrap({ dev: true, dirname: __dirname }, function (err) {
-      if (err) {
-        grunt.fail.warn(err)
-      }
-      var dest = 'test-infra/npm-shrinkwrap.json';
-      fs.renameSync('npm-shrinkwrap.json', dest);
-      grunt.log.writeln('File ' + dest.cyan + ' updated.');
-      done();
-    });
-  });
+	// Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
+	// This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
+	grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', '_update-shrinkwrap']);
+	grunt.registerTask('_update-shrinkwrap', function () {
+		var done = this.async();
+		npmShrinkwrap({ dev: true, dirname: __dirname }, function (err) {
+			if (err) {
+				grunt.fail.warn(err)
+			}
+			var dest = 'test-infra/npm-shrinkwrap.json';
+			fs.renameSync('npm-shrinkwrap.json', dest);
+			grunt.log.writeln('File ' + dest.cyan + ' updated.');
+			done();
+		});
+	});
 };

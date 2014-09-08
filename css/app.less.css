@@ -7,9 +7,14 @@
 
 html {
 	font-size: 7.2px;
-	@media @wide-desktop-screen {font-size: 9.2px;}
 	height: 100%;
 	-webkit-font-smoothing: antialiased;
+}
+
+@media @wide-desktop-screen {
+	html {
+		font-size: 9.2px;
+	}
 }
 
 body {
