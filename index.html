@@ -41,11 +41,8 @@
 				</ul>
 			</nav>
 			<div id="copyright" horizontal layout center-justified center>
-				<span>Zuyet Awarmatik 2014.
-					<a href="http://zuyetawarmatik.deviantart.com/" class="fa fa-deviantart" target="_blank"></a>
-					<a href="https://www.behance.net/zuyetawarmatik" class="fa fa-behance" target="_blank"></a>
-					<a href="https://www.facebook.com/zuyetawarmatik" class="fa fa-facebook" target="_blank"></a>
-					<a href="http://sg.linkedin.com/pub/bui-phuc-duyet/34/224/649" class="fa fa-linkedin" target="_blank"></a>
+				<span ng-controller="SocialLinkController">Zuyet Awarmatik 2014.
+					<a ng-repeat="link in links" ng-href="{{link.href}}" class="fa" ng-class="link.icon" target="_blank"></a>
 				</span>
 			</div>
 			<div id="view-wrapper">
