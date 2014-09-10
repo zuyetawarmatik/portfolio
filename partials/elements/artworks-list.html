@@ -1,11 +1,10 @@
 <div class="artworks-list">
-	<div ng-transclude></div>
 	<div class="artwork-content">
 		<h1>{{focusedArtwork.name}}.<span> Made in {{focusedArtwork.time}}.</span></small>
 		<h2>"{{focusedArtwork.caption}}"</h2>
 		<div class="artwork-thumbnail">
 			<div class="thumbnail-wrapper">
-				<img ng-src="{{focusedArtwork.img}}">
+				<img ng-src="dist/img/{{focusedArtwork.img}}">
 				<div class="thumbnail-shadow"></div>
 				<a class="thumbnail-overlay" ng-href="{{focusedArtwork.link}}" vertical layout center-justified target="_blank">
 					<h3>Peek at artwork</h3>

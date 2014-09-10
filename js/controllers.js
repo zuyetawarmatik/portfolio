@@ -57,4 +57,45 @@
 			}
 		];
 	}]);
+	
+	appControllers.controller('ArtworkController', ['$scope', function($scope) {
+		$scope.artworks = 
+		[
+			{
+				name: 'History Notes',
+				time: 'Dec 2012',
+				caption: 'Simply a delicious mixture of textures and colors.',
+				img: 'history-notes.png',
+				link: 'http://zuyetawarmatik.deviantart.com/art/History-Notes-347163708',
+			},
+			{
+				name: 'The Bang of Chars',
+				time: 'May 2013',
+				caption: 'A brilliant composition of Blender and Photoshop.',
+				img: 'bang-of-chars.png',
+				link: 'http://zuyetawarmatik.deviantart.com/art/The-Bang-Of-Chars-373725412',
+			},
+			{
+				name: 'WeatherMuse',
+				time: 'Aug 2013',
+				caption: 'Bring out the ultimate beauty of translucency.',
+				img: 'weather-muse.png',
+				link: 'https://www.behance.net/gallery/10403173/WeatherMuse',
+			},
+			{
+				name: "X'mas 2013 Special Project",
+				time: 'Dec 2013',
+				caption: "Every year's end, I put all the best to welcome this beloved month.",
+				img: 'xmas-2013.png',
+				link: 'https://www.behance.net/gallery/13338997/2013-Merry-Xmas-to-Everyone',
+			},
+			{
+				name: 'Japan Landmarks',
+				time: 'May 2014',
+				caption: 'A tribute to my encountered wonders in the Japan trip.',
+				img: 'japan-landmarks.png',
+				link: 'https://www.behance.net/gallery/17879433/Japan-Landmarks',
+			}
+		];
+	}]);
 })();

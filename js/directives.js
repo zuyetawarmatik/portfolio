@@ -244,21 +244,15 @@
 	appDirectives.directive('artworksList', ['$interval', function($interval) {
 			return {
 				restrict: 'E',
-				transclude: true,
-				scope: {},
 				controller: function($scope) {
-					var artworks = $scope.artworks = [];
-					this.add = function(artwork) {
-						if (artworks.length === 0)
-							$scope.focus(artwork, 0);
-						artworks.push(artwork);
-					};
 					$scope.focus = function(artwork, index) {
 						$scope.focusedArtwork = artwork;
 						$scope.focusedIndex = index;
 					};
 				},
 				link: function($scope, $element, $attrs) {
+					$scope.focus($scope.artworks[0], 0);
+					
 					var timerFn = $interval(function() {
 						var artworksCount = $scope.artworks.length;
 						var newIndex = (++$scope.focusedIndex)%artworksCount;
@@ -269,24 +263,7 @@
 				templateUrl: '/partials/elements/artworks-list.html'
 			}
 	}]);
-	
-	appDirectives.directive('artwork', function() {
-			return {
-				require: '^artworksList',
-				restrict: 'E',
-				scope: {
-					name: '@',
-					time: '@',
-					caption: '@',
-					img: '@',
-					link: '@',
-				},
-				link: function($scope, $element, $attrs, $ctrl) {
-					$ctrl.add($scope);
-				}
-			}
-	});
-	
+
 	appDirectives.directive('portFloatBtn', function() {
 			return {
 				restrict: 'A',
