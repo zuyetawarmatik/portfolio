@@ -35,6 +35,9 @@ module.exports = function (grunt) {
 				cwd: 'fonts/',
 				src: ['**/*.eot', '**/*.ttf', '**/*.otf', '**/*.woff', '**/*.svg'],
 				dest: 'dist/fonts/'
+			},
+			vendor: {
+				
 			}
 		},
 		
@@ -154,7 +157,9 @@ module.exports = function (grunt) {
 	};
 	
 	// Full distribution task.
-	grunt.registerTask('dist', ['clean', 'copy', 'imagemin', 'concat', 'uglify', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
+	grunt.registerTask('image', ['imagemin']);
+	grunt.registerTask('dist', ['clean', 'copy', 'concat', 'uglify', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
+	grunt.registerTask('dist-full', ['dist', 'image']);
 
 	// Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
 	// This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
