@@ -4,10 +4,6 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-		<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Expires" content="0">
-		
 		<title>Zuyet Awarmatik's Portfolio</title>
 		
 		<meta name="description" content="Zuyet Awarmatik is a UI/UX designer and developer based in Singapore, whose aim is to clean up some mess in this world.">
@@ -28,10 +24,9 @@
 		<link rel="stylesheet" href="dist/fonts/fonts.css">
 	
 		<!-- Main CSS -->
-		<link rel="stylesheet/less" type="text/css" href="dist/css/app.less.css">
-		<link rel="stylesheet" type="text/css" href="dist/css/pages.css">
+		<link rel="stylesheet" type="text/css" href="dist/css/app.css">
 	</head>
-	<body ng-controller="MainController" touch-action="auto" port-background ng-cloak>
+	<body ng-controller="MainController" ng-class="pageId" touch-action="auto" port-background ng-cloak>
 		<div id="wrapper">
 			<nav ng-controller="MenuController" id="menu">
 				<ul horizontal layout around-justified>
@@ -56,7 +51,6 @@
 		<script src="dist/vendor/js/platform.js"></script>
 		
 		<script src="dist/vendor/js/modernizr-2.6.2.min.js"></script>
-		<script src="dist/vendor/js/less-1.7.4.min.js"></script>
 		<script src="dist/vendor/js/angular.min.js"></script>
 		<script src="dist/vendor/js/angular-route.min.js"></script>
 		<script src="dist/vendor/js/angular-animate.min.js"></script>

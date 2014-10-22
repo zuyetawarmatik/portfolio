@@ -1,6 +1,4 @@
-@main-color: #8c3770;
-@dark-color: #7c3163;
-@shadow-color: fade(darken(@dark-color, 7.5%), 40%);
+@import (less) "pages.less.css";
 
 @narrow-desktop-screen: ~"only screen and (max-device-width: 1599px)";
 @wide-desktop-screen: ~"only screen and (min-device-width: 1600px)";
@@ -21,10 +19,25 @@ body {
 	font-family: "Paytone One";
 	font-size: 2rem;
 	color: #444;
-	background: @dark-color;
 	
 	position: relative;
 	height: 100%;
+	
+	&.hello {
+		.body-theme(#8c3770, #7c3163);
+	}
+	
+	&.the-3-colors {
+		.body-theme(#f07241, #e46c3e);
+	}
+	
+	&.portfolio {
+		.body-theme(#4fac9b, #4ba494);
+	}
+	
+	&.experiments {
+		.body-theme(#cca395, #bf998c);
+	}
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -69,34 +82,22 @@ button, .btn {
 }
 
 #menu {
-	&>ul {
+	> ul {
 		margin: 0;
 		padding: 1.5rem 0;
 		
-		background: white;
-		box-shadow: 0 1rem @shadow-color;
+		background: white;	
 		
-		&>li {
+		> li {
 			display: inline-block;
 			transition: box-shadow 0.25s ease;
 			
 			&.selected {
-				background: @main-color;
 				a {
 					color: white;
 				}
 			}
 		
-			&:not(.selected) {
-				a {
-					color: @main-color;
-				}
-			}
-			
-			&:not(.selected):hover {
-				box-shadow: 0 0 0 0.4rem @main-color; 
-			}
-
 			a {
 				text-decoration: none;
 				text-transform: uppercase;
@@ -120,17 +121,12 @@ button, .btn {
 		padding-top: 1rem;
 		text-align: center;
 		transition: box-shadow 0.25s ease;
-		
-		&:hover {
-			box-shadow: 0 0 0 0.8rem @shadow-color;
-		}
 	}
 }
 
 #view-wrapper {
 	height: 74rem;
 	background: white;
-	box-shadow: 0 1rem @shadow-color;
 	overflow: hidden;
 }
 
@@ -153,4 +149,34 @@ button, .btn {
 #acknowledge {
 	color: #fff;
 	height: 10rem;
+}
+
+.body-theme(@main-color, @dark-color) {
+	@shadow-color: fade(darken(@dark-color, 7.5%), 40%);
+	
+	background: @dark-color;
+	
+	#copyright a:hover {
+		box-shadow: 0 0 0 0.8rem @shadow-color;
+	}
+	
+	#menu > ul, #view-wrapper {
+		box-shadow: 0 1rem @shadow-color;
+	}
+	
+	#menu > ul > li {
+		&.selected {
+			background: @main-color;
+		}
+
+		&:not(.selected) {
+			a {
+				color: @main-color;
+			}
+		}
+
+		&:not(.selected):hover {
+			box-shadow: 0 0 0 0.4rem @main-color; 
+		}
+	}
 }

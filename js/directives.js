@@ -59,7 +59,6 @@
 				
 				$scope.$on('$viewContentLoaded', function() {
 					var colors = $scope.getColors();
-					less.modifyVars({ 'main-color' : colors.mainColor , 'dark-color' : colors.darkColor });
 					$scope.redrawBackground();
 				});
 				

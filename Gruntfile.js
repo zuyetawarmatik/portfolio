@@ -21,10 +21,6 @@ module.exports = function (grunt) {
 		},
 
 		copy: {
-			less: {
-				src: 'css/app.less.css',
-				dest: 'dist/css/app.less.css'
-			},
 			img: {
 				src: 'img/*',
 				dest: 'dist/'
@@ -40,12 +36,11 @@ module.exports = function (grunt) {
 				files: [
 					{src: "bower_components/html5-boilerplate/css/normalize.css", dest: "dist/vendor/css/html5-boilerplate/normalize.css"},
 					{src: "bower_components/html5-boilerplate/css/main.css", dest: "dist/vendor/css/html5-boilerplate/main.css"},
-					
+
 					{expand: true, cwd: "bower_components/polymer/", src: ['**/*'], dest: "dist/vendor/import/polymer/"},
-		
+
 					{src: "bower_components/platform/platform.js", dest: "dist/vendor/js/platform.js"},
 					{src: "bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js", dest: "dist/vendor/js/modernizr-2.6.2.min.js"},
-					{src: "bower_components/less/dist/less-1.7.4.min.js", dest: "dist/vendor/js/less-1.7.4.min.js"},
 					{src: "bower_components/angular/angular.min.js", dest: "dist/vendor/js/angular.min.js"},
 					{src: "bower_components/angular-route/angular-route.min.js", dest: "dist/vendor/js/angular-route.min.js"},
 					{src: "bower_components/angular-animate/angular-animate.min.js", dest: "dist/vendor/js/angular-animate.min.js"},
@@ -54,7 +49,7 @@ module.exports = function (grunt) {
 				]
 			}
 		},
-		
+
 		imagemin: {
 			portfolio: {
 				files: [{
@@ -65,7 +60,7 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-		
+
 		concat: {
 			js: {
 				src: [
@@ -90,20 +85,20 @@ module.exports = function (grunt) {
 		uglify: {
 			options: {
 				mangle: false
-    	},
+			},
 			js: {
 				src: '<%= concat.js.dest %>',
 				dest: 'dist/js/app.js'
 			},
 		},
-		
+
 		less: {
-			compilePages: {
+			compile: {
 				options: {
 					strictMath: true,
 				},
 				files: {
-					'dist/css/pages.css': 'css/pages.less.css'
+					'dist/css/app.css': 'css/app.less.css'
 				}
 			},
 		},
@@ -122,7 +117,7 @@ module.exports = function (grunt) {
 				]
 			},
 			portfolio: {
-				src: ['dist/css/pages.css']
+				src: ['dist/css/app.css']
 			},
 		},
 
@@ -143,8 +138,7 @@ module.exports = function (grunt) {
 			},
 			css: {
 				files: {
-					'dist/css/pages.css': 'dist/css/pages.css',
-					'dist/css/app.less.css': 'dist/css/app.less.css',
+					'dist/css/app.css': 'dist/css/app.css'
 				}
 			},
 			fonts: {
@@ -169,7 +163,7 @@ module.exports = function (grunt) {
 	var isUndefOrNonZero = function (val) {
 		return val === undefined || val !== '0';
 	};
-	
+
 	// Full distribution task.
 	grunt.registerTask('image', ['imagemin']);
 	grunt.registerTask('dist', ['clean', 'copy', 'concat', 'uglify', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
