@@ -22,13 +22,7 @@
 					darkColor: '#4ba494',
 					shadowColor: '#459688'
 				};
-			case 'contemplating':
-				return {
-					mainColor: '#80ccea',
-					darkColor: '#7ac2de',
-					shadowColor: '#73b6d1'
-				};
-			case 'contacts':
+			case 'experiments':
 				return {
 					mainColor: '#cca395',
 					darkColor: '#bf998c',

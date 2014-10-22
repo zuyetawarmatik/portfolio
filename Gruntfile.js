@@ -56,7 +56,6 @@ module.exports = function (grunt) {
 					'js/common.js',
 					'js/controllers.js',
 					'js/directives.js',
-					'js/filters.js',
 					'js/services.js'
 				],
 				dest: 'dist/js/app.js'
