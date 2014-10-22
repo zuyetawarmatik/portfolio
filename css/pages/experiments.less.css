@@ -35,6 +35,7 @@
 			#d8ad9e	75%,
 			#d8ad9e
 		);
+		box-shadow: 0 0 1rem 0 #b38e82 inset;
 		
 		animation: barberpole 2.5s linear infinite;
 	}
