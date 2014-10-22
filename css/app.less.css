@@ -88,6 +88,10 @@ button, .btn {
 		
 		background: white;	
 		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		
 		> li {
 			display: inline-block;
 			transition: box-shadow 0.25s ease;
@@ -111,6 +115,11 @@ button, .btn {
 #copyright {
 	height: 10rem;
 	color: white;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 	
 	a {
 		color: white;
@@ -149,6 +158,11 @@ button, .btn {
 #acknowledge {
 	color: #fff;
 	height: 10rem;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .body-theme(@main-color, @dark-color) {

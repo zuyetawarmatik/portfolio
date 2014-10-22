@@ -113,7 +113,12 @@
 		background: fade(#4fac9b, 95%);
 		transition: all 0.25s ease;
 		color: #fff;
-				
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		
 		&.expanded {
 			top: 0;
 			bottom: 0;
