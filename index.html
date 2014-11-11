@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
 		
 		<!-- Webfont -->
+		<script src="//use.edgefonts.net/league-gothic.js"></script>
 		<script src="//use.edgefonts.net/source-sans-pro:n3,i3,n4,i4,n6,i6,n7,i7.js"></script>
 
 		<!-- Main CSS -->
@@ -32,10 +33,21 @@
 			ga('send', 'pageview');
 		</script>
 	</head>
-	<body>
+	<body data-anchor="intro">
+		<header id="menu">
+			<ul class="well">
+				<li data-menuanchor="intro" class="active"><a href="#intro">Introduction</a></li>
+				<li data-menuanchor="portfolio"><a href="#portfolio">Portfolio</a></li>
+				<li data-menuanchor="experiments"><a href="#experiments">Experiments</a></li>
+				<li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
+			</ul>
+		</header>
+		
 		<div class="background">
 			<div id="intro"></div>
 			<div id="portfolio"></div>
+			<div id="experiments"></div>
+			<div id="contacts"></div>
 		</div>
 		
 		<section class="full-page">
@@ -44,12 +56,24 @@
 					Good day! I'm Zuyet.
 				</h1>
 				<p>
-					The love to clean
+					It's my love to clean some tiny mess in the world and make it hassle-free.
 				</p>
 			</div>
-			<div class="section" data-anchor="portfolio">Some section</div>
-			<div class="section">Some section</div>
-			<div class="section">Some section</div>
+			<div class="section" data-anchor="portfolio">
+				<div class="container" id="portfolio-container">
+					<div class="col-sm-4">
+						<div class="portfolio-item well">
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="portfolio-item well">
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="section" data-anchor="experiments">Some section</div>
+			<div class="section" data-anchor="contacts">Some section</div>
 		</section>
 		
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>

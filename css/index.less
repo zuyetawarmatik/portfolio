@@ -1,0 +1,102 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "../bower_components/lesshat/build/lesshat.less";
+
+@import "override.less";
+@import "common.less";
+
+#menu {
+	position: fixed;
+	top: 10px;
+	z-index: 1;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	
+	ul {
+		list-style-type: none;
+		display: inline-block;
+		padding: 5px;
+		margin: 0;
+		border-radius: 50px;
+		
+		li {
+			display: inline-block;
+			padding: 10px;
+			border-radius: 50px;
+			
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+			
+			&.active {
+				.emboss;
+				font-weight: 600;
+			}
+			
+			&[data-menuanchor='intro'].active {
+				color: #26ADE4;
+			}
+			
+			&[data-menuanchor='portfolio'].active {
+				color: #00D9B6;
+			}
+			
+			&[data-menuanchor='experiments'].active {
+				color: #FF9F80;
+			}
+			
+			&[data-menuanchor='contacts'].active {
+				color: #F67385;
+			}
+		}
+	}
+}
+
+.background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	> div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+	}
+	
+	#intro {
+		.background-image(linear-gradient(135deg, #9AF3F1 0%, #26ADE4 100%));
+		opacity: 1;
+	}
+	
+	#portfolio {
+		.background-image(linear-gradient(135deg, #1DFEBD 0%, #00D9B6 100%));
+	}
+	
+	#experiments {
+		.background-image(linear-gradient(135deg, #FFC48C 0%, #FF9F80 100%));
+	}
+	
+	#contacts {
+		.background-image(linear-gradient(135deg, #FFAE95 0%, #F67385 100%));
+	}
+}
+
+.full-page > .section {
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 2px 2px fade(#666, 20%);
+	
+	h1 {
+		font-size: 72px;
+	}
+}
+
+#portfolio-container {
+	height: 400px;
+}

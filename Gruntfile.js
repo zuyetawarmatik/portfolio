@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 					strictMath: true,
 				},
 				files: {
-					'dist/css/index.css': 'css/index.less.css'
+					'dist/css/index.css': 'css/index.less'
 				}
 			},
 		},
