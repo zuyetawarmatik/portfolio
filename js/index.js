@@ -21,11 +21,11 @@ $(function() {
 		menu: "#menu",
 		
 		afterLoad: function(anchorLink, index) {
-			$("body").attr("data-anchor", anchorLink);
 			getBackgroundByIndex(index).css({opacity: 1});
 		},
 		
 		onLeave: function(index, nextIndex, direction){
+			$("body").attr("data-anchor", getBackgroundByIndex(nextIndex).attr("id"));
 			getBackgroundByIndex(index).animate({opacity: 0}, 400);
 			getBackgroundByIndex(nextIndex).animate({opacity: 1}, 400);
 		}

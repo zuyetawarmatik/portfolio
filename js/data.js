@@ -9,13 +9,22 @@ var portfolios = [
 		image: "WeatherMuse.png"
 	},
 	{
-		title: "WeatherMuse",
-		date: "Aug 2013",
+		title: "Animhist",
+		date: "Oct 2013",
 		content: [
-			"WeatherMuse is a brilliant UI design which demonstrates a creative combination of features: weather and music player. The underlying wire connecting them is the mood: you can expect a dynamic, booming sound in a rather hot day or a sweet and calm melody in such another shower day.",
-			"The project is created right after the announcement time of iOS7, which features vibrant colors and focuses on minimalist design."
+			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
+			"The project is a huge, well-done and carefully documented which earns my group project an A."
 		],
-		image: "WeatherMuse.png"
+		image: "Animhist.png"
+	},
+	{
+		title: "Animhist",
+		date: "Oct 2013",
+		content: [
+			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
+			"The project is a huge, well-done and carefully documented which earns my group project an A."
+		],
+		image: "ant.s.cial.png"
 	}
 ];
 
