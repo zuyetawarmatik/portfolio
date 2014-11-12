@@ -18,7 +18,7 @@
 		padding: 5px;
 		margin: 0;
 		border-radius: 50px;
-		
+
 		li {
 			display: inline-block;
 			padding: 10px;
@@ -32,28 +32,19 @@
 			&:not(:last-child) {
 				margin-right: 10px;
 			}
-			
-			&.active {
-				.emboss;
-				font-weight: 600;
-			}
-			
-			&[data-menuanchor='intro'].active {
-				color: #26ADE4;
-			}
-			
-			&[data-menuanchor='portfolio'].active {
-				color: #00D9B6;
-			}
-			
-			&[data-menuanchor='experiments'].active {
-				color: #FF9F80;
-			}
-			
-			&[data-menuanchor='contacts'].active {
-				color: #F67385;
-			}
 		}
+	}
+}
+
+@media (max-width: @screen-xs) {
+	#menu {
+		top: 0;
+		
+		ul {
+			border-radius: 0;
+			white-space: nowrap;
+			overflow-x: auto;
+		}	
 	}
 }
 
@@ -75,7 +66,7 @@
 	}
 	
 	#portfolio {
-		.background-image(linear-gradient(135deg, #1DFEBD 0%, #00D9B6 100%));
+		.background-image(linear-gradient(135deg, #00D9B6 0%, #3B8686 100%));
 	}
 	
 	#experiments {
@@ -97,6 +88,22 @@
 	}
 }
 
-#portfolio-container {
-	height: 400px;
+.show {
+	height: 480px;
+	
+	.description {
+		h1 {
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		
+		text-align: left;
+		overflow: hidden;
+	}
+	
+	.image {
+		img {
+			width: 100%;
+		}
+	}
 }

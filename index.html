@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>Zuyet Awarmatik's Portfolio</title>
 		
@@ -15,6 +16,7 @@
 		
 		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
+		<link rel="stylesheet" href="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css">
 		
 		<!-- Webfont -->
 		<script src="//use.edgefonts.net/league-gothic.js"></script>
@@ -36,7 +38,7 @@
 	<body data-anchor="intro">
 		<header id="menu">
 			<ul class="well">
-				<li data-menuanchor="intro" class="active"><a href="#intro">Introduction</a></li>
+				<li data-menuanchor="intro" class="active emboss"><a href="#intro">Introduction</a></li>
 				<li data-menuanchor="portfolio"><a href="#portfolio">Portfolio</a></li>
 				<li data-menuanchor="experiments"><a href="#experiments">Experiments</a></li>
 				<li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
@@ -52,26 +54,16 @@
 		
 		<section class="full-page">
 			<div class="section" data-anchor="intro">
-				<h1>
-					Good day! I'm Zuyet.
-				</h1>
-				<p>
-					It's my love to clean some tiny mess in the world and make it hassle-free.
-				</p>
-			</div>
-			<div class="section" data-anchor="portfolio">
-				<div class="container" id="portfolio-container">
-					<div class="col-sm-4">
-						<div class="portfolio-item well">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="portfolio-item well">
-						</div>
-					</div>
+				<div class="container-fluid">
+					<h1>
+						Good day! I'm Zuyet.
+					</h1>
+					<p>
+						It's my love to clean some tiny mess in the world and make it hassle-free.
+					</p>
 				</div>
-
 			</div>
+			<div class="section" data-anchor="portfolio"></div>
 			<div class="section" data-anchor="experiments">Some section</div>
 			<div class="section" data-anchor="contacts">Some section</div>
 		</section>
@@ -80,7 +72,9 @@
 		<script src="bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
 		<script src="bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
 		<script src="bower_components/fullpage.js/jquery.fullPage.min.js"></script>
+		<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
 		
+		<script src="js/data.js"></script>
 		<script src="js/index.js"></script>
 	</body>
 </html>
