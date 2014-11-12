@@ -32,6 +32,37 @@
 			&:not(:last-child) {
 				margin-right: 10px;
 			}
+			
+			&.active {
+				.emboss;
+				transition: all 400ms ease;
+			}
+		}
+	}
+}
+
+body {
+	&[data-anchor='intro'] {
+		#menu .active {
+			color: #26ADE4;
+		}
+	}
+	
+	&[data-anchor='portfolio'] {
+		#menu .active {
+			color: #3B8686;
+		}
+	}
+	
+	&[data-anchor='experiments'] {
+		#menu .active {
+			color: #FF9F80;
+		}
+	}
+	
+	&[data-anchor='contacts'] {
+		#menu .active {
+			color: #F67385;
 		}
 	}
 }
