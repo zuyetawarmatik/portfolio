@@ -6,7 +6,8 @@ var portfolios = [
 			"WeatherMuse is a brilliant UI design which demonstrates a creative combination of features: weather and music player. The underlying wire connecting them is the mood: you can expect a dynamic, booming sound in a rather hot day or a sweet and calm melody in such another shower day.",
 			"The project is created right after the announcement time of iOS7, which features vibrant colors and focuses on minimalist design."
 		],
-		image: "WeatherMuse.png"
+		image: "WeatherMuse.png",
+		link: "https://www.behance.net/gallery/10403173/WeatherMuse"
 	},
 	{
 		title: "Animhist",
@@ -15,16 +16,27 @@ var portfolios = [
 			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
 			"The project is a huge, well-done and carefully documented which earns my group project an A."
 		],
-		image: "Animhist.png"
+		image: "Animhist.png",
+		link: "https://www.behance.net/gallery/12501497/Animhist"
 	},
 	{
-		title: "Animhist",
-		date: "Oct 2013",
+		title: "ant.s.cial",
+		date: "Aug 2013",
 		content: [
-			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
-			"The project is a huge, well-done and carefully documented which earns my group project an A."
+			"ant.s.cial is a hobbyist personal project finished in Aug 2013 whose idea is authentically original: it combines anonymous social network with proximity messaging and place review."
 		],
-		image: "ant.s.cial.png"
+		image: "ant.s.cial.png",
+		link: "https://www.behance.net/gallery/9755821/Antscial"
+	},
+	{
+		title: "Forbes Digital Wallet",
+		date: "Jul 2014 - Oct 2014",
+		content: [
+			"A throughout design for a big corporate project, which comprises of over 50 screenshots for different interactions, versions and devices.",
+			"Forbes Digital Wallet is a solution to enterprise's expense with analytics, reporting and management tools."
+		],
+		image: "FDW.png",
+		link: "#"
 	}
 ];
 
@@ -34,7 +46,7 @@ $(function() {
 		.append(
 			'<div class="container-fluid">\
 				<div class="row">\
-					<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 show">\
+					<div class="col-sm-10 col-sm-offset-1 show">\
 						<div class="col-sm-5 col-sm-push-7 description">\
 							<h1></h1>\
 							<h3><em></em></h3>\
@@ -54,7 +66,7 @@ $(function() {
 			$el.find(".description").append("<p>" + p + "</p>");
 		});
 		
-		$el.find(".description").append("<a href='#' class='btn emboss'>Visit Full Project</a>");
+		$el.find(".description").append("<a href='" + portfolio.link + "' target='_blank' class='btn emboss'>Visit Full Project</a>");
 		
 		$("[data-anchor='portfolio']").append($el);
 	});
