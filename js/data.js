@@ -44,7 +44,7 @@ var experiments = [
 	{
 		title: "SwiftUI Kara",
 		content: [
-			"SwiftUI Kara is a Polymer element that allows synchronizing lyrics and a music source, and it's totally open-source!."
+			"SwiftUI Kara is a Polymer element that allows synchronizing lyrics and a music source, and it's totally open-source!"
 		],
 		image: "SwiftUI-Kara.gif",
 		link: "http://zuyetawarmatik.github.io/experiments/swiftui-kara"
