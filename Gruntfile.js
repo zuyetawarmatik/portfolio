@@ -37,15 +37,13 @@ module.exports = function (grunt) {
 					{src: "bower_components/html5-boilerplate/css/normalize.css", dest: "dist/vendor/css/html5-boilerplate/normalize.css"},
 					{src: "bower_components/html5-boilerplate/css/main.css", dest: "dist/vendor/css/html5-boilerplate/main.css"},
 
-					{expand: true, cwd: "bower_components/polymer/", src: ['**/*'], dest: "dist/vendor/import/polymer/"},
-
 					{src: "bower_components/platform/platform.js", dest: "dist/vendor/js/platform.js"},
 					{src: "bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js", dest: "dist/vendor/js/modernizr-2.6.2.min.js"},
 					{src: "bower_components/angular/angular.min.js", dest: "dist/vendor/js/angular.min.js"},
 					{src: "bower_components/angular-route/angular-route.min.js", dest: "dist/vendor/js/angular-route.min.js"},
 					{src: "bower_components/angular-animate/angular-animate.min.js", dest: "dist/vendor/js/angular-animate.min.js"},
 					{src: "bower_components/svg.js/dist/svg.min.js", dest: "dist/vendor/js/svg.min.js"},
-					{src: "bower_components/jquery/dist/jquery.min.js", dest: "dist/vendor/js/jquery.min.js"},
+					{src: "bower_components/jquery/dist/jquery.min.js", dest: "dist/vendor/js/jquery.min.js"}
 				]
 			}
 		},
