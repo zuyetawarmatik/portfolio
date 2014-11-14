@@ -5,7 +5,7 @@ $(function() {
 		return $backgrounds.find(">div:eq(" + (fullPageIndex - 1) + ")");
 	}
 	
-	$(".description").perfectScrollbar({
+	$(".section[data-anchor='portfolio'] .description").perfectScrollbar({
 		suppressScrollX: true,
 		wheelSpeed: 2
 	});
@@ -25,7 +25,7 @@ $(function() {
 		},
 		
 		onLeave: function(index, nextIndex, direction){
-			$("body").attr("data-anchor", getBackgroundByIndex(nextIndex).attr("id"));
+			$("body").attr("data-page", getBackgroundByIndex(nextIndex).attr("id"));
 			getBackgroundByIndex(index).animate({opacity: 0}, 400);
 			getBackgroundByIndex(nextIndex).animate({opacity: 1}, 400);
 		}

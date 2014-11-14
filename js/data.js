@@ -40,7 +40,21 @@ var portfolios = [
 	}
 ];
 
+var experiments = [
+	{
+		title: "SwiftUI Kara",
+		content: [
+			"SwiftUI Kara is a Polymer element that allows synchronizing lyrics and a music source, and it's totally open-source!."
+		],
+		image: "SwiftUI-Kara.gif",
+		link: "http://zuyetawarmatik.github.io/experiments/swiftui-kara"
+	}
+];
+
 $(function() {
+	var $portfolioSec = $("[data-anchor='portfolio']");
+	var $experimentSec = $("[data-anchor='experiments']");
+	
 	$.each(portfolios, function(i, portfolio) {
 		var $el = $('<div class="slide"></div>')
 		.append(
@@ -50,9 +64,10 @@ $(function() {
 						<div class="col-sm-5 col-sm-push-7 description">\
 							<h1></h1>\
 							<h3><em></em></h3>\
+							<a target="_blank" class="btn emboss">Visit Full Project</a>\
 						</div>\
 						<div class="col-sm-7 col-sm-pull-5 image">\
-							<img src="">\
+							<img>\
 						</div>\
 					</div>\
 				</div>\
@@ -61,13 +76,40 @@ $(function() {
 		$el.find("h1").html(portfolio.title);
 		$el.find("h3 em").html(portfolio.date);
 		$el.find(".image img").attr("src", "img/" + portfolio.image);
+		$el.find("a").attr("href", portfolio.link);
 		
 		$.each(portfolio.content, function(j, p) {
-			$el.find(".description").append("<p>" + p + "</p>");
+			$("<p>" + p + "</p>").insertAfter($el.find(".description h3"));
 		});
 		
-		$el.find(".description").append("<a href='" + portfolio.link + "' target='_blank' class='btn emboss'>Visit Full Project</a>");
+		$portfolioSec.append($el);
+	});
+	
+	$.each(experiments, function(i, experiment) {
+		var $el = $(
+			'<div class="container-fluid">\
+				<div class="row">\
+					<div class="col-sm-10 col-sm-offset-1">\
+						<div class="col-sm-4 col-sm-push-4">\
+							<div class="show">\
+								<div class="image emboss">\
+									<img>\
+								</div>\
+								<div class="description">\
+									<h3></h3>\
+									<p></p>\
+									<a target="_blank" class="btn emboss">Go to Laboratory</a>\
+								</div>\
+							</div>\
+						</div>\
+					</div>\
+				</div>\
+			</div>');
 		
-		$("[data-anchor='portfolio']").append($el);
+		$el.find("h3").html(experiment.title);
+		$el.find("p").html(experiment.content);
+		$el.find(".image img").attr("src", "img/" + experiment.image);
+		$el.find("a").attr("href", experiment.link);
+		$experimentSec.append($el);
 	});
 });
