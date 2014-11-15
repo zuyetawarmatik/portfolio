@@ -1,7 +1,7 @@
 {
   "name": "zuyetawarmatik-portfolio",
   "description": "Zuyet Awarmatik's Porfolio",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "license": "MIT",
   "devDependencies": {
     "glob": "~4.0.2",
