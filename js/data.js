@@ -75,7 +75,7 @@ $(function() {
 		
 		$el.find("h1").html(portfolio.title);
 		$el.find("h3 em").html(portfolio.date);
-		$el.find(".image img").attr("src", "img/" + portfolio.image);
+		$el.find(".image img").attr("src", "dist/img/" + portfolio.image);
 		$el.find("a").attr("href", portfolio.link);
 		
 		$.each(portfolio.content, function(j, p) {
@@ -108,7 +108,7 @@ $(function() {
 		
 		$el.find("h3").html(experiment.title);
 		$el.find("p").html(experiment.content);
-		$el.find(".image img").attr("src", "img/" + experiment.image);
+		$el.find(".image img").attr("src", "dist/img/" + experiment.image);
 		$el.find("a").attr("href", experiment.link);
 		$experimentSec.append($el);
 	});
