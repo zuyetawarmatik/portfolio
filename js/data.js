@@ -92,7 +92,7 @@ $(function() {
 					<div class="col-sm-10 col-sm-offset-1">\
 						<div class="col-sm-4 col-sm-push-4">\
 							<div class="show">\
-								<div class="image emboss">\
+								<div class="image emboss emboss-light">\
 									<img>\
 								</div>\
 								<div class="description">\
