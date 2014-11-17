@@ -20,6 +20,16 @@ module.exports = function (grunt) {
 			dist: ['dist']
 		},
 
+		uglify: {
+			options: {
+				mangle: false
+			},
+			js: {
+				src: ['js/data.js', 'js/index.js'],
+				dest: 'dist/js/app.js'
+			},
+		},
+
 		copy: {
 			img: {
 				src: 'img/*',
@@ -107,7 +117,7 @@ module.exports = function (grunt) {
 
 	// Full distribution task.
 	grunt.registerTask('image', ['imagemin']);
-	grunt.registerTask('dist', ['clean', 'copy', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
+	grunt.registerTask('dist', ['clean', 'uglify', 'copy', 'less', 'autoprefixer', 'csscomb', 'cssmin']);
 	grunt.registerTask('dist-full', ['dist', 'image']);
 
 	// Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
