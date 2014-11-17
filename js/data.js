@@ -36,7 +36,7 @@ var portfolios = [
 			"Forbes Digital Wallet is a solution to enterprise's expense with analytics, reporting and management tools."
 		],
 		image: "FDW.png",
-		link: "#"
+		link: "https://www.behance.net/gallery/21373679/FDW"
 	}
 ];
 
