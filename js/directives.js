@@ -163,7 +163,7 @@
 				$element.bind('mouseenter', function() {
 					$element.addClass('hovered');
 					$scope.drawBackground();
-						});
+				});
 				$element.bind('mouseleave', function() {
 					$element.removeClass('hovered');
 					$scope.drawBackground();
