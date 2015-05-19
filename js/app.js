@@ -1,10 +1,10 @@
 (function() {
 	var app = angular.module('portfolio', 
-															['ngRoute', 'ngAnimate',
-															 'portfolio.services',
-															 'portfolio.directives',
-															 'portfolio.controllers']
-													);
+			['ngRoute', 'ngAnimate',
+			 'portfolio.services',
+			 'portfolio.directives',
+			 'portfolio.controllers']
+	);
 	
 	app.config(['$routeProvider', 
 		function($routeProvider) {
