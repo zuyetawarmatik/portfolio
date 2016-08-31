@@ -1,5 +1,25 @@
 var portfolios = [
 	{
+		title: "RocketUncle on Android",
+		date: "Jun 2015",
+		content: [
+			"Designed with guidelines based on Google Material Design, the app enhances usability for customer who books and tracks delivery.",
+			"RocketUncle (then Zyllem) is a logistic platform where delivery is fulfilled by logistic partners and freelance drivers."
+		],
+		image: "RURedApp.png",
+		link: "https://www.behance.net/gallery/42226813/RU-Android-App-for-Customer"
+	},
+	{
+		title: "Forbes Digital Wallet",
+		date: "Jul 2014 - Oct 2014",
+		content: [
+			"A throughout design for a big corporate project, which comprises of over 50 screenshots for different interactions, versions and devices.",
+			"Forbes Digital Wallet is a solution to enterprise's expense with analytics, reporting and management tools."
+		],
+		image: "FDW.png",
+		link: "https://www.behance.net/gallery/21373679/FDW"
+	},
+	{
 		title: "WeatherMuse",
 		date: "Aug 2013",
 		content: [
@@ -8,16 +28,6 @@ var portfolios = [
 		],
 		image: "WeatherMuse.png",
 		link: "https://www.behance.net/gallery/10403173/WeatherMuse"
-	},
-	{
-		title: "Animhist",
-		date: "Oct 2013",
-		content: [
-			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
-			"The project is a huge, well-done and carefully documented which earns my group project an A."
-		],
-		image: "Animhist.png",
-		link: "https://www.behance.net/gallery/12501497/Animhist"
 	},
 	{
 		title: "ant.s.cial",
@@ -29,15 +39,15 @@ var portfolios = [
 		link: "https://www.behance.net/gallery/9755821/Antscial"
 	},
 	{
-		title: "Forbes Digital Wallet",
-		date: "Jul 2014 - Oct 2014",
+		title: "Animhist",
+		date: "Oct 2013",
 		content: [
-			"A throughout design for a big corporate project, which comprises of over 50 screenshots for different interactions, versions and devices.",
-			"Forbes Digital Wallet is a solution to enterprise's expense with analytics, reporting and management tools."
+			"Animated History is a flat, sleek and modern UI for a school project which is used to visualize data both geographically and temporally. In reality I also held responsibility for the backend of the project, which is coded in PHP/Laravel framework (you can find it on my Github!)",
+			"The project is a huge, well-done and carefully documented which earns my group project an A."
 		],
-		image: "FDW.png",
-		link: "https://www.behance.net/gallery/21373679/FDW"
-	}
+		image: "Animhist.png",
+		link: "https://www.behance.net/gallery/12501497/Animhist"
+	},
 ];
 
 var experiments = [
